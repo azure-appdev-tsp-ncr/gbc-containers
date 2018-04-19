@@ -34,7 +34,7 @@ spec:
       imagePullSecrets:
         - name: acr-secret
       containers:
-      - image: ghoelzer2azure/api:latest
+      - image: ghoelzer2azure/rating-api:latest
         name:  heroes-api-cntnr
         resources:
           requests:
@@ -85,7 +85,7 @@ spec:
       imagePullSecrets:
         - name: acr-secret
       containers:
-      - image: ghoelzer2azure/web:latest
+      - image: ghoelzer2azure/rating-web:latest
         name:  heroes-web-cntnr
         resources:
           requests:
