@@ -14,9 +14,7 @@ There are multiple ways of accessing Kubernetes dashboard. You can access throug
 1. Command-Line using Azure CLI & kubectl
 
     * Run ```az login``` to authenticate with Azure in order to use Azure CLI from your local workstation
-    * Run ```NAME=$(az group list -o table | grep ODL | awk '{print $1}')``` in order to retrieve the name of the resource group for your Azure account and put it in the NAME environment variable.
-    * Run ```CLUSTER_NAME="${NAME//_}"``` in order to retrieve the cluster name (and to remove the underscore)
-    * Run ```az aks get-credentials -n $CLUSTER_NAME -g $NAME``` in order to get the credentials to access our managed Kubernetes cluster in Azure
+    * Run ```az aks get-credentials -n <Cluster Name> -g <Resource Group Name>``` in order to get the credentials to access our managed Kubernetes cluster in Azure
     * Run ```kubectl proxy```
     * This creates a local proxy to 127.0.0.1:8001
     * Open a web browser and point to: <http://127.0.0.1:8001/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#!/cluster?namespace=default>
