@@ -33,7 +33,7 @@ spec:
       imagePullSecrets:
         - name: acr-secret
       containers:
-      - image:  ghoelzer2azure/rating-db:lastest
+      - image:  ghoelzer2azure/rating-db:latest
         name:  heroes-db-cntnr
         resources:
           requests:
