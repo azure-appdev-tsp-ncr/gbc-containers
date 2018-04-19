@@ -16,20 +16,20 @@
 
 5. In the cloud shell, you are automatically logged into your Azure subscription.
 
-6. Create an Azure Resource Group in Central US.
+6. Create an Azure Resource Group in Central US, using a unique **Resource Group Name**.
 
 ```
-az group create -n <NAME> -l centralus * For NAME use unigue name
+az group create -n <Resource Group Name> -l centralus
 ```
 
-8. Create your AKS cluster in the resource group created above with 1 nodes, targeting Kubernetes version 1.8.6
+7. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.7.7, providing a unique **Cluster Name**.
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
 
-    az aks create -n CLUSTER_NAME -g NAME -c 1 -k 1.8.6 --generate-ssh-keys -l centralus
+    az aks create -n <Cluster Name> -g <Resource Group Name> -c 1 -k 1.7.7 --generate-ssh-keys -l centralus
     ```
 
-9. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
+8. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
     ```
     az aks list -o table
 
@@ -39,12 +39,12 @@ az group create -n <NAME> -l centralus * For NAME use unigue name
     ```
 
 
-10. Get the Kubernetes config files for your new AKS cluster
+9. Get the Kubernetes config files for your new AKS cluster
     ```
-    az aks get-credentials -n CLUSTER_NAME -g NAME
+    az aks get-credentials -n <Cluster Name> -g <Resource Group Name>
     ```
 
-11. Verify you have API access to your new AKS cluster
+10. Verify you have API access to your new AKS cluster
 
     > Note: It can take 5 minutes for your nodes to appear and be in READY state. You can run `watch kubectl get nodes` to monitor status.
 

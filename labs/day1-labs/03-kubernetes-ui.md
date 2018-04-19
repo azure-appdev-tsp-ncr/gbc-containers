@@ -2,22 +2,24 @@
 
 The Kubernetes dashboard is a web ui that lets you view, monitor, and troubleshoot Kubernetes resources. 
 
-> Note: The Kubernetes dashboard is a secured endpoint and can only be accessed using the SSH keys for the cluster. Since cloud shell runs in the browser, it is not possible to tunnel to the dashboard using the steps below.
+> Note: The Kubernetes dashboard is a secured endpoint and can only be accessed using the SSH keys for the cluster. As the cloud shell runs in a browser, the **Azure CLI** and **kubectl** must be used from your local workstation using the steps below.
+
+* See the following link for installing the **Azure CLI** - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+* See the following link for installing **kubectl** - https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
 ### Accessing The Dashboard UI
 
 There are multiple ways of accessing Kubernetes dashboard. You can access through kubectl command-line interface or through the master server API. We'll be using kubectl, as it provides a secure connection, that doesn't expose the UI to the internet.
 
-1. Command-Line Proxy
+1. Command-Line using Azure CLI & kubectl
 
-    * Open an RDP session to the jumpbox IP with username and password
-    * Run ```az login``` to authenticate with Azure in order to use Azure CLI in the Jumpbox instead of Cloud Shell
-    * Run ```NAME=$(az group list -o table | grep ODL | awk '{print $1}')``` in order to retrieve the name of the resource group for your Azure account and put it in the NAME variable.
-    * Run ```CLUSTER_NAME="${NAME//_}"``` in order to retrieve the cluster name (to remove the underscore)
+    * Run ```az login``` to authenticate with Azure in order to use Azure CLI from your local workstation
+    * Run ```NAME=$(az group list -o table | grep ODL | awk '{print $1}')``` in order to retrieve the name of the resource group for your Azure account and put it in the NAME environment variable.
+    * Run ```CLUSTER_NAME="${NAME//_}"``` in order to retrieve the cluster name (and to remove the underscore)
     * Run ```az aks get-credentials -n $CLUSTER_NAME -g $NAME``` in order to get the credentials to access our managed Kubernetes cluster in Azure
     * Run ```kubectl proxy```
     * This creates a local proxy to 127.0.0.1:8001
-    * Open a web browser (Firefox is pre-installed on the Jumpbox) and point to: <http://127.0.0.1:8001/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#!/cluster?namespace=default>
+    * Open a web browser and point to: <http://127.0.0.1:8001/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#!/cluster?namespace=default>
 
 ### Explore Kubernetes Dashboard
 

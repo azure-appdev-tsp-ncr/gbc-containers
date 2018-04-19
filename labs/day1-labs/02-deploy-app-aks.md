@@ -1,18 +1,18 @@
 # Deploy the Superhero Ratings App to AKS
 
-1. In Azure Cloud Shell use 'kubectl' to deploy the web,api, and database to AKS
+* In Azure Cloud Shell use **kubectl** to deploy the web,api, and database to AKS
    
 
 ## Deploy database container to AKS
 
 * Use the kubectl CLI to deploy each app
     ```
-    cd ~/blackbelt-aks-hackfest/labs/helper-files
+    cd ~/gbc-containers/labs/helper-files
 
     kubectl apply -f heroes-db.yaml
     ```
 
-* Get mongodb pod name
+* Get mongodb pod name and set **MONGO_POD** environment variable
     ```
     kubectl get pods
 
@@ -23,30 +23,31 @@
     ```
 
 * Import data into MongoDB using script
-    ```
-    # ensure the pod name variable is set to your pod name
-    # once you exec into pod, run the `import.sh` script
 
+    Ensure the **MONGO_POD** environment variable is set to your pod name, and then once you exec into pod run the **import.sh** script
+    ```
     kubectl exec -it $MONGO_POD bash
 
     root@heroes-db-deploy-2357291595-xb4xm:/# ./import.sh
+
     2018-01-16T21:38:44.819+0000	connected to: localhost
     2018-01-16T21:38:44.918+0000	imported 4 documents
     2018-01-16T21:38:44.927+0000	connected to: localhost
     2018-01-16T21:38:45.031+0000	imported 72 documents
     2018-01-16T21:38:45.040+0000	connected to: localhost
     2018-01-16T21:38:45.152+0000	imported 2 documents
+    
     root@heroes-db-deploy-2357291595-xb4xm:/# exit
-
-    # be sure to exit pod as shown above
     ```
+    **Note:  be sure to exit pod as shown above**
+    
 
 ## Deploy the web and api containers to AKS
 
 * Use the kubectl CLI to deploy each app
 
     ```
-    cd ~/blackbelt-aks-hackfest/labs/helper-files
+    cd ~/gbc-containers/labs/helper-files
 
     kubectl apply -f heroes-web-api.yaml
     ```
@@ -76,4 +77,4 @@
 
 * Browse to the External IP for your web application (on port 8080) and try the app
 
-> The public IP can take a few minutes to create with a new cluster. Sit back and relax. Maybe check Facebook.
+> The public IP can take a few minutes to create with a new cluster. Sit back and relax. Maybe check Facebook :-)

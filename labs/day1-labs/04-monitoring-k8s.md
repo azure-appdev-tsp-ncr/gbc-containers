@@ -36,7 +36,7 @@ Prometheus is a Cloud Native Computing Foundation (CNCF) project used to collect
 
     Switch to the `helper-files` directory and view the `prometheus-configforhelm.yaml` file. This configures Helm to install Prometheus with our desired settings.
     ```
-    cd ~/blackbelt-aks-hackfest/labs/helper-files
+    cd ~/gbc-containers/labs/helper-files
     # The following command will install Prometheus into the K8s cluster using custom settings
 
     helm install --name gbbhackprometheus stable/prometheus --version 4.6.13 -f prometheus-configforhelm.yaml
@@ -108,6 +108,7 @@ Use the EXTERNAL-IP value from the previous step and put that into your browser:
 
 4. Add K8s Monitoring Dashboard to Grafana
     * After the datasource has been added, it is now time to add a dashboard. Grafana dashboards can be shared on Grafana.com. Go to import dashboards via the menu in the top left.
+    * Note: You will need to clone the the lab repo locally (https://github.com/Azure/gbc-containers.git) to upload the dashboard json file.
 
     ![](img/8-grafana_dashboardimport.png)
 
