@@ -26,7 +26,7 @@ az group create -n <Resource Group Name> -l centralus
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
 
-    az aks create -n <Cluster Name> -g <Resource Group Name> -c 1 -k 1.7.7 --generate-ssh-keys -l centralus
+    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.7.7 --generate-ssh-keys -l centralus
     ```
 
 8. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
@@ -69,4 +69,4 @@ az group create -n <Resource Group Name> -l centralus
     To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
     ```
 
-You should now have a Kubernetes cluster running with 1 node. You do not see the master servers for the cluster because these are managed by Microsoft. The Control Plane services which manage the Kubernetes cluster such as scheduling, API access, configuration data store and object controllers are all provided as services to the nodes.
+You should now have a Kubernetes cluster running with 2 nodes. You do not see the master servers for the cluster because these are managed by Microsoft. The Control Plane services which manage the Kubernetes cluster such as scheduling, API access, configuration data store and object controllers are all provided as services to the nodes.
