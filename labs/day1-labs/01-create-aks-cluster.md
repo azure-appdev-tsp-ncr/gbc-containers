@@ -11,7 +11,7 @@
 
 4. Once your cloud shell is started, clone the workshop repo into the cloud shell environment
     ```
-    git clone https://github.com/Azure/gbc-containers
+    git clone https://github.com/azure-appdev-tsp-ncr/gbc-containers
     ```
 
 5. In the cloud shell, you are automatically logged into your Azure subscription.
