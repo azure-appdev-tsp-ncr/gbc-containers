@@ -15,6 +15,9 @@
     ```
 
 5. In the cloud shell, you are automatically logged into your Azure subscription.
+If you have multiple subscription
+    1. To listout all subscription :-  az account list --output table 
+    2. To Change to active subscription :- az account set --subscription "My Demos"
 
 6. Create an Azure Resource Group in Central US, using a unique **Resource Group Name**.
 
