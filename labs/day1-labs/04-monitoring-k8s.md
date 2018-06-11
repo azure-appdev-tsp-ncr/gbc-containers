@@ -1,6 +1,4 @@
-### ***
-### Note:  Currently experiencing a bug in Helm/Tiller using AKS version 1.8.6, need to determine if fixed in higher release
-### ***
+
 # Add Monitoring to an Azure Kubernetes Service Cluster
 
 There are a number of monitoring solutions available today. Here is a quick, but not exhaustive list for reference purposes:
