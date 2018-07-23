@@ -11,6 +11,8 @@ The Kubernetes dashboard is a web ui that lets you view, monitor, and troublesho
 
 There are multiple ways of accessing Kubernetes dashboard. You can access through kubectl command-line interface or through the master server API. We'll be using kubectl, as it provides a secure connection, that doesn't expose the UI to the internet.
 
+Note:  If your AKS Cluster has RBAC Enabled, a cluster role binding needs to be created, follow the instructions here - https://docs.microsoft.com/en-us/azure/aks/kubernetes-dashboard
+
 1. Command-Line using Azure CLI & kubectl
 
     * Run ```az login``` to authenticate with Azure in order to use Azure CLI from your local workstation
