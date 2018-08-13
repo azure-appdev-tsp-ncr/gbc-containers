@@ -17,9 +17,9 @@ Note:  If your AKS Cluster has RBAC Enabled, a cluster role binding needs to be 
 
     * Run ```az login``` to authenticate with Azure in order to use Azure CLI from your local workstation
     * Run ```az aks get-credentials -n <Cluster Name> -g <Resource Group Name>``` in order to get the credentials to access our managed Kubernetes cluster in Azure
-    * Run ```kubectl proxy```
-    * This creates a local proxy to 127.0.0.1:8001
-    * Open a web browser and point to: <http://127.0.0.1:8001/api/v1/proxy/namespaces/kube-system/services/kubernetes-dashboard/#!/cluster?namespace=default>
+    * Run ```az aks browse --resource-group <Resource Group Name> --name <Cluster Name>```
+    * This creates a local proxy to 127.0.0.1:8001 and should open a new browser window at:
+    <http://127.0.0.1:8001/#!/overview?namespace=default>
 
 ### Explore Kubernetes Dashboard
 
