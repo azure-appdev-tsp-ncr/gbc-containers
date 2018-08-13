@@ -71,7 +71,7 @@ metadata:
   labels:
     name:  heroes-web
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     rollingUpdate:
       maxSurge: 1
