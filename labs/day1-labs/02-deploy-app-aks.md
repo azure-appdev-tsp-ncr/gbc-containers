@@ -72,9 +72,9 @@
     api          LoadBalancer   10.0.20.156   52.176.104.50    3000:31416/TCP   5m
     kubernetes   ClusterIP      10.0.0.1      <none>           443/TCP          12m
     mongodb      ClusterIP      10.0.5.133    <none>           27017/TCP        5m
-    web          LoadBalancer   10.0.54.206   52.165.235.114   8080:32404/TCP   5m
+    web          LoadBalancer   10.0.54.206   52.165.235.114   80:32404/TCP   5m
     ```
 
-* Browse to the External IP for your web application (on port 8080) and try the app
+* Browse to the External IP for your web application (on port 80) and try the app
 
 > The public IP can take a few minutes to create with a new cluster. Sit back and relax. Maybe check Facebook :-)
