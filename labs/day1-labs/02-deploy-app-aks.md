@@ -75,6 +75,10 @@
     web          LoadBalancer   10.0.54.206   52.165.235.114   80:32404/TCP     5m
     ```
 
-* Browse to the External IP for your web application (on port 80) and try the app
+* Browse to the External IP for your web application (on port 80) and try the app  
+* Notice the API is also exposed externally, curl the Heroes/Rated endpoint
+```
+curl <api EXTERNAL-IP>:3000/api/heroes/rated
+```
 
 > The public IP can take a few minutes to create with a new cluster. Sit back and relax. Maybe check Facebook :-)
