@@ -59,7 +59,7 @@ spec:
   type: LoadBalancer
   ports:
   - name: http
-    port: 8080
+    port: 80
     targetPort: 8080
   selector:
     name: heroes-web
@@ -71,7 +71,7 @@ metadata:
   labels:
     name:  heroes-web
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     rollingUpdate:
       maxSurge: 1
