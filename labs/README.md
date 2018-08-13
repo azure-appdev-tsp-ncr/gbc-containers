@@ -13,8 +13,8 @@
 
 **The following Helper Files and Examples are required to complete the Labs.**  
 
-[Heroes MongDB K8S Deployment](./helper-files/hereos-db.yaml) - AKS Service & Deployment YAML  
-[Heroes Web Front End and API K8S Deployment](./helper-files/hereos-web-api.yaml) - AKS Node.js Web UI & API Service & Deployment YAML  
+[Heroes MongDB K8S Deployment](./helper-files/heroes-db.yaml) - AKS Service & Deployment YAML  
+[Heroes Web Front End and API K8S Deployment](./helper-files/heroes-web-api.yaml) - AKS Node.js Web UI & API Service & Deployment YAML  
 [Prometheus & Grafana K8S Helm Deployment](./helper-files/prometheus-configforhelm.yaml) - AKS/Helm Prometheus Cluster Monitoring & Grafana Dashboard Deployment  
 [Grafana Dashboard](./helper-files/grafana-dashboard.json) - Sample Grafana K8S Monitoring Dashboard Definition  
 
