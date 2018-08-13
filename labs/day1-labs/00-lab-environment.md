@@ -2,7 +2,7 @@
 
 ## Classroom Setting
 
-These labs are designed for delivery in a classroom setting with the **Azure Global Blackbelt Team.** 
+These labs are can be used for delivery in both a classroom setting with an Azure Technical Specialist or self-guided on your own machine.
 
 * For these specific labs, we are assuming you will be using your own Azure subscription, as a relatively small set of Azure resources are required.
 

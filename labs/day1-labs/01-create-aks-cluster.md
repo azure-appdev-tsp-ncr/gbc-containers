@@ -15,7 +15,7 @@
     ```
 
 5. In the cloud shell, you are automatically logged into your Azure subscription.
-If you have multiple subscription
+If you have multiple subscriptions
     1. To listout all subscription :-  az account list --output table 
     2. To Change to active subscription :- az account set --subscription "My Demos"
 
@@ -25,11 +25,11 @@ If you have multiple subscription
 az group create -n <Resource Group Name> -l centralus
 ```
 
-7. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.7.7, providing a unique **Cluster Name**.
+7. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.9.6, providing a unique **Cluster Name**.
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
 
-    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.8.6 --generate-ssh-keys -l centralus
+    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.9.6 --generate-ssh-keys --disable-rbac -l centralus
     ```
 
 8. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
