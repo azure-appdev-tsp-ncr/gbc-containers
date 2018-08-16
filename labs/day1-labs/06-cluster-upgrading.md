@@ -7,21 +7,25 @@ Azure Container Service (AKS) makes it easy to perform common management tasks i
 Before upgrading a cluster, use the `az aks get-upgrades` command to check which Kubernetes releases are available for upgrade.
 
 ```azurecli-interactive
-az aks get-upgrades --name $CLUSTER_NAME --resource-group $NAME --output table
+az aks get-upgrades -g <RESOURCE_GROUP_NAME> -n <AKS_CLUSTER_NAME> --output table
 ```
 
 Output:
 
 ```console
-Name     ResourceGroup    MasterVersion    MasterUpgrades       NodePoolVersion     NodePoolUpgrades
--------  ---------------  ---------------  -------------------  ------------------  -------------------
-default  myResourceGroup  1.7.7            1.8.2, 1.7.9, 1.8.1  1.7.7               1.8.2, 1.7.9, 1.8.1
+Name     ResourceGroup     MasterVersion    NodePoolVersion    Upgrades
+-------  ----------------  ---------------  -----------------  -----------------------------
+default  gbc-containers01  1.9.6            1.9.6              1.9.9, 1.10.3, 1.10.5, 1.10.6
 ```
 
-We have three versions available for upgrade: 1.7.9, 1.8.1 and 1.8.2. We can use the `az aks upgrade` command to upgrade to the latest available version.  During the upgrade process, nodes are carefully [cordoned and drained][kubernetes-drain] to minimize disruption to running applications.  Before initiating a cluster upgrade, ensure that you have enough additional compute capacity to handle your workload as cluster nodes are added and removed.
+We have four versions available for upgrade:  1.9.9, 1.10.3, 1.10.5, 1.10.6.  We can use the `az aks upgrade` command to upgrade to an intermediate or the latest available version.  During the upgrade process, nodes are carefully [cordoned and drained][kubernetes-drain] to minimize disruption to running applications.  Before initiating a cluster upgrade, ensure that you have enough additional compute capacity to handle your workload as cluster nodes are added and removed.
 
 ```azurecli-interactive
-az aks upgrade --name $CLUSTER_NAME --resource-group $NAME --kubernetes-version 1.8.2
+# Reduce the Heroes Web Deployment to ensure enough Compute Capacity during Upgrade
+kubectl scale deploy/heroes-web-deploy --replicas=2
+
+# Initiate Upgrade in Background/Monitor in Azure Portal
+az aks upgrade -g <RESOURCE_GROUP_NAME> -n <AKS_CLUSTER_NAME> --kubernetes-version 1.9.9 --no-wait
 ```
 
 Output:
