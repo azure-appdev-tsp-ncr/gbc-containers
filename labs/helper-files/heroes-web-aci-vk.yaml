@@ -5,7 +5,7 @@ metadata:
   labels:
     name:  heroes-web
 spec:
-  replicas: 1
+  replicas: 4
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -45,5 +45,8 @@ spec:
           name:  heroes-web
         imagePullPolicy: Always
       nodeSelector:
-        kubernetes.io/hostname: virtual-kubelet-virtual-kubelet-linux-centralus
+        kubernetes.io/hostname: virtual-kubelet-<linux node name>
+      tolerations:
+      - key: azure.com/aci
+        effect: NoSchedule
       restartPolicy: Always
