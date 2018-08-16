@@ -16,8 +16,6 @@ spec:
       labels:
         name:  heroes-web
     spec:
-      imagePullSecrets:
-        - name: acr-secret
       containers:
       - image: ghoelzer2azure/rating-web:latest
         name:  heroes-web-cntnr
