@@ -27,7 +27,7 @@ spec:
             memory: "1Gi"
         env:
         - name:  API
-          value:  http://api:3000/
+          value:  http://<EXTERNAL-IP>:3000/
         - name: KUBE_NODE_NAME
           valueFrom:
             fieldRef:
