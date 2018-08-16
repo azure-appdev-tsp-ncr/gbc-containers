@@ -46,7 +46,4 @@ spec:
         imagePullPolicy: Always
       nodeSelector:
         kubernetes.io/hostname: virtual-kubelet-virtual-kubelet-linux-centralus
-      tolerations:
-      - key: azure.com/aci
-        effect: NoSchedule
       restartPolicy: Always
