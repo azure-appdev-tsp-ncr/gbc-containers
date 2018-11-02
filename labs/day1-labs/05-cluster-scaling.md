@@ -20,7 +20,7 @@ heroes-web-1677855039-8t57k                    1/1       Running   0          2d
 * To simulate a real-world scenario we are going to scale the web app to handle increased load.
 ```bash
 # This command will create multiple replicas of the heroes-web pod to simulate additional load on the cluster.
-kubectl scale deploy/heroes-web-deploy --replicas=4
+kubectl scale deploy/heroes-web-deploy --replicas=6
 ```
 4. Check to see number of pods now running via Grafana Dashboard
 
@@ -31,10 +31,12 @@ kubectl scale deploy/heroes-web-deploy --replicas=4
 kubectl get pod | grep heroes
 # You should see something like the following as output (more than one heroes-web pod and some of them in different states):
 NAME                                                              READY     STATUS    RESTARTS   AGE
-heroes-web-3683626428-4m1v4                                       0/1       Pending   0          2m
-heroes-web-3683626428-hcs49                                       1/1       Running   0          4m
-heroes-web-3683626428-z1t1j                                       0/1       Pending   0          2m
-heroes-web-3683626428-zxp2s                                       1/1       Running   0          2m
+heroes-web-deploy-844f59cc4-7k564                                 1/1       Running   0          33m
+heroes-web-deploy-844f59cc4-bq9rp                                 1/1       Running   0          40s
+heroes-web-deploy-844f59cc4-gbnqp                                 1/1       Running   0          44m
+heroes-web-deploy-844f59cc4-mmt8d                                 1/1       Running   0          1m
+heroes-web-deploy-844f59cc4-qkrwp                                 1/1       Running   0          1m
+heroes-web-deploy-844f59cc4-xsp6r                                 0/1       Pending   0          40s
 ```
 
 6. Check up on Pods Running in Grafana dashboard
@@ -49,8 +51,8 @@ heroes-web-3683626428-zxp2s                                       1/1       Runn
 kubectl get nodes
 # You should see something like the following as output (there is one node in the cluster):
 NAME                       STATUS    ROLES     AGE       VERSION
-aks-nodepool1-42552728-0   Ready     agent     4h        v1.9.6
-aks-nodepool1-42552728-1   Ready     agent     4h        v1.9.6
+aks-nodepool1-42552728-0   Ready     agent     4h        v1.10.7
+aks-nodepool1-42552728-1   Ready     agent     4h        v1.10.7
 ```
 2. Scale out AKS cluster to accomodate the demand
 ```bash
@@ -66,10 +68,10 @@ az aks scale -g <RESOURCE_GROUP_NAME> -n <AKS_CLUSTER_NAME> --node-count 4
 kubectl get nodes
 # You should see something like the following as output (there are now 4 nodes in the cluster):
 NAME                       STATUS    ROLES     AGE       VERSION
-aks-nodepool1-42552728-0   Ready     agent     5h        v1.9.6
-aks-nodepool1-42552728-1   Ready     agent     5h        v1.9.6
-aks-nodepool1-42552728-2   Ready     agent     7m        v1.9.6
-aks-nodepool1-42552728-3   Ready     agent     7m        v1.9.6
+aks-nodepool1-42552728-0   Ready     agent     5h        v1.10.7
+aks-nodepool1-42552728-1   Ready     agent     5h        v1.10.7
+aks-nodepool1-42552728-2   Ready     agent     7m        v1.10.7
+aks-nodepool1-42552728-3   Ready     agent     7m        v1.10.7
 ```
 
 4. Re-visit Grafana Dasboard to validate cluster scale is working.
