@@ -55,8 +55,8 @@ az group create -n <Resource Group Name> -l centralus
     kubectl get nodes
     
     NAME                       STATUS    ROLES     AGE       VERSION
-    aks-nodepool1-20004257-0   Ready     agent     4m        v1.8.6
-    aks-nodepool1-20004257-1   Ready     agent     4m        v1.8.6
+    aks-nodepool1-20004257-0   Ready     agent     4m        v1.10.7
+    aks-nodepool1-20004257-1   Ready     agent     4m        v1.10.7
     ```
     
     To see more details about your cluster:
