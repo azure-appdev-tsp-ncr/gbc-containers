@@ -25,11 +25,11 @@ If you have multiple subscriptions
 az group create -n <Resource Group Name> -l centralus
 ```
 
-7. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.9.6, providing a unique **Cluster Name**.
+7. Create your AKS cluster in the resource group created above with 2 nodes, targeting Kubernetes version 1.10.7, providing a unique **Cluster Name**.
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
 
-    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.9.6 --generate-ssh-keys --disable-rbac -l centralus
+    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.10.7 --generate-ssh-keys --disable-rbac -l centralus
     ```
 
 8. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
