@@ -22,7 +22,7 @@ spec:
             memory: "1Gi"
         env:
         - name:  API
-          value:  http://api:3000/
+          value:  http://40.113.225.64:3000/
         - name: KUBE_NODE_NAME
           valueFrom:
             fieldRef:
@@ -40,8 +40,12 @@ spec:
           name:  heroes-web
         imagePullPolicy: Always
       nodeSelector:
-        kubernetes.io/hostname: virtual-kubelet-kubelet-linux-centralus
+        beta.kubernetes.io/os: linux
+        kubernetes.io/role: agent
+        type: virtual-kubelet
       tolerations:
-      - key: azure.com/aci
+      - key: virtual-kubelet.io/provider
+        operator: Equal
+        value: azure
         effect: NoSchedule
       restartPolicy: Always
