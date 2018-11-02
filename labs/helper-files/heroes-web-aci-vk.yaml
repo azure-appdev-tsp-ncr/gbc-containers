@@ -7,17 +7,12 @@ metadata:
 spec:
   replicas: 4
   strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
+    type: Recreate
   template:
     metadata:
       labels:
         name:  heroes-web
     spec:
-      imagePullSecrets:
-        - name: acr-secret
       containers:
       - image: ghoelzer2azure/rating-web:latest
         name:  heroes-web-cntnr
@@ -27,7 +22,7 @@ spec:
             memory: "1Gi"
         env:
         - name:  API
-          value:  http://<EXTERNAL-IP>:3000/
+          value:  http://api:3000/
         - name: KUBE_NODE_NAME
           valueFrom:
             fieldRef:
@@ -45,7 +40,7 @@ spec:
           name:  heroes-web
         imagePullPolicy: Always
       nodeSelector:
-        kubernetes.io/hostname: virtual-kubelet-<linux node name>
+        kubernetes.io/hostname: virtual-kubelet-kubelet-linux-centralus
       tolerations:
       - key: azure.com/aci
         effect: NoSchedule
