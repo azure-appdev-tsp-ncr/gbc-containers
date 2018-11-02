@@ -15,7 +15,7 @@ Output:
 ```console
 Name     ResourceGroup     MasterVersion    NodePoolVersion    Upgrades
 -------  ----------------  ---------------  -----------------  -----------------------------
-default  gbc-containers01  1.9.6            1.9.6              1.9.9, 1.10.3, 1.10.5, 1.10.6
+default  gbc-containers01  1.10.7           1.10.7             1.10.8, 1.11.2, 1.11.3
 ```
 
 We have four versions available for upgrade:  1.9.9, 1.10.3, 1.10.5, 1.10.6.  We can use the `az aks upgrade` command to upgrade to an intermediate or the latest available version.  During the upgrade process, nodes are carefully [cordoned and drained][kubernetes-drain] to minimize disruption to running applications.  Before initiating a cluster upgrade, ensure that you have enough additional compute capacity to handle your workload as cluster nodes are added and removed.
@@ -25,7 +25,7 @@ We have four versions available for upgrade:  1.9.9, 1.10.3, 1.10.5, 1.10.6.  We
 kubectl scale deploy/heroes-web-deploy --replicas=2
 
 # Initiate Upgrade in Background/Monitor in Azure Portal
-az aks upgrade -g <RESOURCE_GROUP_NAME> -n <AKS_CLUSTER_NAME> --kubernetes-version 1.9.9 --no-wait
+az aks upgrade -g <RESOURCE_GROUP_NAME> -n <AKS_CLUSTER_NAME> --kubernetes-version 1.10.8 --no-wait
 ```
 
 Output:
