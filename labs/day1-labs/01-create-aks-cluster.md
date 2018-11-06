@@ -29,7 +29,7 @@ az group create -n <Resource Group Name> -l centralus
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
 
-    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.10.7 --generate-ssh-keys --disable-rbac -l centralus
+    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.10.8 --generate-ssh-keys --disable-rbac -l centralus
     ```
 
 8. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
