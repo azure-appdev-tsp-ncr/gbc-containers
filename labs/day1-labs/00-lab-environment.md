@@ -47,7 +47,7 @@ It is possible to use your own machine outside of the classroom. You will need t
  ```
  2. From Powershell (all examples will use Powershell going forward), execute the following command to install the additional developer tooling and utilities
  ```
- cinst git visualstudiocode azure-cli docker docker-for-windows kubernetes-cli -y
+ cup git visualstudiocode azure-cli docker docker-for-windows kubernetes-cli -y
  ```
  3. When the package installation is complete, close Powershell session and use Desktop Icon to start Docker initialization.  You will be prompted to initially logout, just restart the VM.  Two restarts will be required to fully initialize the Hyper-V subsystem for Docker to operate.  Follow the prompts from Docker.  
  4. After the 2nd VM restart and successful Docker startup, open a Powershell session and execute the following command to verify Docker install
