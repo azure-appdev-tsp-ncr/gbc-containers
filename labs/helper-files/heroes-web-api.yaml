@@ -110,4 +110,10 @@ spec:
         - containerPort:  8080
           name:  heroes-web
         imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+             path: /
+             port: 8080
+             initialDelaySeconds: 3
+             periodSeconds: 3        
       restartPolicy: Always
