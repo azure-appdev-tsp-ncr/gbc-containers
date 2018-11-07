@@ -56,7 +56,7 @@ spec:
         - containerPort:  27017
           name:  heroes-db
         volumeMounts:
-        - mountPath: /data
+        - mountPath: /data/db
           name: data
         imagePullPolicy: Always
       volumes:
