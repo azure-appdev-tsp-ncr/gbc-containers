@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+  labels:
+    app: web
+  name: web
+spec:
+  rules: 
+  - host: ghtspaksdemo01.eastus.cloudapp.azure.com 
+    http:
+      paths:
+      - backend:
+          serviceName: web
+          servicePort: 80
+        path: /
