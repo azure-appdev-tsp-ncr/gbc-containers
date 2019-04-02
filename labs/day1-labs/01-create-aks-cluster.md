@@ -29,7 +29,7 @@ az group create -n <Resource Group Name> -l centralus
     ```
     # This command can take 5-25 minutes to run as it is creating the AKS cluster. Please be PATIENT...
 
-    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.10.8 --generate-ssh-keys --disable-rbac -l centralus
+    az aks create -n <Cluster Name> -g <Resource Group Name> -c 2 -k 1.11.8 --generate-ssh-keys --disable-rbac -l centralus
     ```
 
 8. Verify your cluster status. The `ProvisioningState` should be `Succeeded`
@@ -38,7 +38,7 @@ az group create -n <Resource Group Name> -l centralus
 
     Name                 Location    ResourceGroup         KubernetesVersion    ProvisioningState    Fqdn
     -------------------  ----------  --------------------  -------------------  -------------------  -------------------------------------------------------------------
-    ODLaks-v2-gbb-16502  centralus   ODL_aks-v2-gbb-16502  1.8.6                Succeeded             odlaks-v2--odlaks-v2-gbb-16-b23acc-17863579.hcp.centralus.azmk8s.io
+    ODLaks-v2-gbb-16502  centralus   ODL_aks-v2-gbb-16502  1.11.8                Succeeded             odlaks-v2--odlaks-v2-gbb-16-b23acc-17863579.hcp.centralus.azmk8s.io
     ```
 
 
@@ -55,8 +55,8 @@ az group create -n <Resource Group Name> -l centralus
     kubectl get nodes
     
     NAME                       STATUS    ROLES     AGE       VERSION
-    aks-nodepool1-20004257-0   Ready     agent     4m        v1.10.7
-    aks-nodepool1-20004257-1   Ready     agent     4m        v1.10.7
+    aks-nodepool1-20004257-0   Ready     agent     4m        v1.11.8
+    aks-nodepool1-20004257-1   Ready     agent     4m        v1.11.8
     ```
     
     To see more details about your cluster:
