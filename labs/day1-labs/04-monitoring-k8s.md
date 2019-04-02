@@ -26,8 +26,8 @@ We are going to be installing Prometheus and Grafana into our K8s cluster using 
     ```
     helm version
     # You should see something like the following as output:
-    Client: &version.Version{SemVer:"v2.11.0", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
-    Server: &version.Version{SemVer:"v2.11.0", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
+    Client: &version.Version{SemVer:"v2.13.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
+    Server: &version.Version{SemVer:"v2.13.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
     ```
 ## Install Prometheus using Helm
 Prometheus is a Cloud Native Computing Foundation (CNCF) project used to collect and process metrics. It collects metrics from configured targets, in our case it is a Kubernetes Cluster.
