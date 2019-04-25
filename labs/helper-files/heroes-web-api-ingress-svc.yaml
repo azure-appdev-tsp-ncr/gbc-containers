@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: heroes-web-ingress
+  namespace: ingress-external
+spec:
+  type: ExternalName
+  externalName: web.demo-heroes.svc.cluster.local
+  ports:
+  - port: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: heroes-api-ingress
+  namespace: ingress-external
+spec:
+  type: ExternalName
+  externalName: api.demo-heroes.svc.cluster.local
+  ports:
+  - port: 3000

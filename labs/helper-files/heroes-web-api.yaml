@@ -89,8 +89,8 @@ spec:
         name:  heroes-web-cntnr
         resources:
           requests:
-            cpu: "0.5"
-            memory: "1Gi"
+            cpu: "0.1"
+            memory: "50Mi"
         env:
         - name:  API
           value:  http://api:3000/
