@@ -4,4 +4,4 @@ Here are the instructions for implementing a basic external ingress using the Ng
 2. Apply **web** and **api** service updates in ***heroes-web-api-clusterip.yaml***
 3. Review & update ***heroes-web-api-ingress-svc.yaml*** with the Namespace used for the Heroes app, then Apply to create required **External Services**
 4. Apply ***heroes-web-api-ingress-svc.yaml*** to create ingress paths to the Web UI and API
-5. Update the Environment Variable **API** in the ***heroes-web-deploy*** deployment to: **http://<EXTERNAL INGRESS IP>/heroes/**
+5. Update the Environment Variable **API** in the ***heroes-web-deploy*** deployment to: **http://EXTERNAL_INGRESS_IP/heroes/**
