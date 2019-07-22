@@ -46,6 +46,18 @@ spec:
         ports:
         - containerPort:  3000
           name:  heroes-api
+        livenessProbe:
+          httpGet:
+             path: /api/heroes/rated
+             port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+             path: /api/heroes/rated
+             port: 3000
+          initialDelaySeconds: 1
+          periodSeconds: 2
         imagePullPolicy: Always
       restartPolicy: Always
 ---
@@ -113,5 +125,13 @@ spec:
           httpGet:
              path: /
              port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+             path: /
+             port: 8080
+          initialDelaySeconds: 1
+          periodSeconds: 2
         imagePullPolicy: Always
       restartPolicy: Always
