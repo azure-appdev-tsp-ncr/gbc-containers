@@ -19,3 +19,8 @@ spec:
         backend:
           serviceName: heroes-api-ingress
           servicePort: 3000
+      - path: /sample
+        backend:
+          serviceName: spring-web-ingress
+          servicePort: 8080
+
