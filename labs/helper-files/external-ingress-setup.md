@@ -1,3 +1,4 @@
+Use the doco here to setup a basic Ingress Controller deployed to the  **ingress-external** namespace: https://docs.microsoft.com/en-us/azure/aks/ingress-basic
 Here are the instructions for implementing a basic external ingress using the Nginx Ingress controller already setup in the **ingress-external** namespace:
 
 1. Delete the **web** and **api** services
