@@ -19,8 +19,7 @@ spec:
         backend:
           serviceName: heroes-api-ingress
           servicePort: 3000
-      - path: /sample
+      - path: /coolstore
         backend:
           serviceName: spring-web-ingress
           servicePort: 8080
-
